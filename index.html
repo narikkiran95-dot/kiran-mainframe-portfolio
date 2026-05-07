@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiran Induri | Mainframe Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e40af);
+      color: white;
+      padding: 60px 8% 80px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 15px;
+      color: #dbeafe;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+
+    .profile-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      background: white;
+      color: #1e40af;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .profile-links a:hover {
+      background: #dbeafe;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    .article-box {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      max-width: 1100px;
+      margin: -50px auto 40px;
+      position: relative;
+    }
+
+    .article-box h2 {
+      color: #1e40af;
+      margin-bottom: 18px;
+      font-size: 30px;
+    }
+
+    .article-box p {
+      margin-bottom: 15px;
+      font-size: 17px;
+      color: #374151;
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .advantage-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .advantage-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .advantage-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .advantage-card div {
+      padding: 22px;
+    }
+
+    .advantage-card h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    .tabs-container {
+      max-width: 1050px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+      justify-content: center;
+    }
+
+    .tab-buttons button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      background: #e5e7eb;
+      color: #111827;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .tab-buttons button.active,
+    .tab-buttons button:hover {
+      background: #1e40af;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h3 {
+      color: #1e40af;
+      margin-bottom: 12px;
+      font-size: 26px;
+    }
+
+    .tab-content ul {
+      margin-left: 22px;
+    }
+
+    .tab-content li {
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-card {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-card h2 {
+      color: #1e40af;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .profile-card p {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .linkedin-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 25px;
+      background: #0a66c2;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .linkedin-btn:hover {
+      background: #004182;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 34px;
+      }
+
+      header h2 {
+        font-size: 20px;
+      }
+
+      .article-box {
+        margin-top: -35px;
+        padding: 25px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Kiran Induri</h1>
+    <h2>Mainframe Developer</h2>
+    <p>
+      Helping organizations modernize legacy mainframe systems by improving performance,
+      reliability, integration, automation, and business agility.
+    </p>
+
+    <div class="profile-links">
+      <a href="mailto:narik.kiran95@gmail.com">Email Me</a>
+      <!-- Replace the LinkedIn URL below with your exact LinkedIn profile link -->
+      <a href="https://www.linkedin.com/in/kiran-i-b6090513b/" target="_blank">Visit My LinkedIn</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="article-box">
+        <h2>Modernizing Legacy Projects with Mainframe Technologies</h2>
+        <p>
+          Modernization does not always mean replacing mainframe systems. In many enterprise
+          environments, mainframes continue to run mission-critical banking, insurance,
+          healthcare, and financial applications. The real goal is to make these systems faster,
+          more secure, easier to integrate, and ready for digital transformation.
+        </p>
+
+        <p>
+          By using technologies such as COBOL, JCL, DB2, CICS, VSAM, MQ, APIs, automation tools,
+          and cloud integration patterns, organizations can extend the value of their existing
+          systems while reducing risk and improving delivery speed.
+        </p>
+
+        <p>
+          Mainframe modernization helps businesses connect proven legacy applications with modern
+          platforms, web applications, APIs, analytics tools, and customer-facing digital services.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Advantages of Modernizing Old Technology Tools</h2>
+      <p class="section-subtitle">
+        Modernization improves business performance while protecting the value of existing
+        enterprise systems.
+      </p>
+
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Server modernization" />
+          <div>
+            <h3>Improved Performance</h3>
+            <p>Optimized batch jobs, DB2 queries, and CICS transactions help reduce processing time and improve response speed.</p>
+          </div>
+        </div>
+
+        <div class="advantage-card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="API integration" />
+          <div>
+            <h3>Better Integration</h3>
+            <p>Mainframe applications can be exposed through APIs and middleware to connect with web, mobile, and cloud platforms.</p>
+          </div>
+        </div>
+
+        <div class="advantage-card">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80" alt="Security and reliability" />
+          <div>
+            <h3>Higher Reliability</h3>
+            <p>Modern monitoring, error handling, and automation reduce outages and improve production support efficiency.</p>
+          </div>
+        </div>
+
+        <div class="advantage-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Team collaboration" />
+          <div>
+            <h3>Faster Delivery</h3>
+            <p>Agile practices, DevOps pipelines, and better documentation help teams deliver changes faster and with less risk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Interactive Modernization Areas</h2>
+      <p class="section-subtitle">Click each tab to explore how mainframe modernization adds value.</p>
+
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="active" onclick="openTab(event, 'performance')">Performance</button>
+          <button onclick="openTab(event, 'integration')">API Integration</button>
+          <button onclick="openTab(event, 'automation')">Automation</button>
+          <button onclick="openTab(event, 'security')">Security</button>
+        </div>
+
+        <div id="performance" class="tab-content active">
+          <h3>Performance Optimization</h3>
+          <ul>
+            <li>Improve COBOL program logic for better execution time.</li>
+            <li>Optimize DB2 SQL queries, indexes, and access paths.</li>
+            <li>Reduce batch window delays by tuning JCL job streams.</li>
+            <li>Improve CICS transaction response time for online users.</li>
+          </ul>
+        </div>
+
+        <div id="integration" class="tab-content">
+          <h3>API and Middleware Integration</h3>
+          <ul>
+            <li>Expose mainframe business logic as REST APIs.</li>
+            <li>Connect COBOL, CICS, IMS, and DB2 systems with modern applications.</li>
+            <li>Use MQ and API gateways for reliable communication.</li>
+            <li>Support digital banking, mobile apps, and cloud platforms.</li>
+          </ul>
+        </div>
+
+        <div id="automation" class="tab-content">
+          <h3>Automation and DevOps</h3>
+          <ul>
+            <li>Automate repetitive batch monitoring and validation tasks.</li>
+            <li>Use scheduling tools such as CA7 or Control-M for controlled execution.</li>
+            <li>Improve deployment quality through CI/CD processes.</li>
+            <li>Reduce manual errors in production support activities.</li>
+          </ul>
+        </div>
+
+        <div id="security" class="tab-content">
+          <h3>Security and Compliance</h3>
+          <ul>
+            <li>Protect sensitive business data with secure access controls.</li>
+            <li>Follow compliance standards in banking, insurance, and healthcare systems.</li>
+            <li>Improve audit readiness through better logs and documentation.</li>
+            <li>Modernize applications without disrupting critical business operations.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Professional Profile</h2>
+      <div class="profile-card">
+        <h2>Kiran Induri</h2>
+        <p><strong>Title:</strong> Mainframe Developer</p>
+        <p><strong>Email:</strong> narik.kiran95@gmail.com</p>
+        <p>
+          Skilled in mainframe development, production support, modernization, batch processing,
+          online transaction systems, and enterprise application reliability.
+        </p>
+        <!-- Replace this URL with your real LinkedIn URL -->
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/kiran-i-b6090513b/" target="_blank">
+          Connect on LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kiran Induri | Mainframe Developer</p>
+  </footer>
+
+  <script>
+    function openTab(event, tabName) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      const tabButtons = document.querySelectorAll('.tab-buttons button');
+
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      document.getElementById(tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
